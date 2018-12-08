@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profile Page</title>
+     <!-- FONT AWESOME -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <% include partials/head %>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-warning">
+      <a class="navbar-brand mx-auto" href="/">Dominó</a>
+      <p id="username"><%= user.usuario %></p>
+        <a href="/logout" class="btn btn-light btn-sm">
+          Logout
+        </a>
+    </nav>
+
+      </header>
+      <hr>
+      
+             
+               
+            <div class="container" id="contentWrap">
+      <div class="row mt-2">
+
+        <div class="col-md-5">
+          <!-- CHAT CONTAINER -->
+          <div class="card">
+            <!-- CARD HEADER-->
+            <div class="card-header">
+              <h4>Partidas creadas</h3>
+            </div>
+
+            <!-- CARD BODY-->
+            <div id="" class="card-body">
+
+                <table class="table block" id="mesas">
+                            <tr>
+                                <th>Equipo 1</th>
+                                <th>Equipo 2</th>
+                                <td>Apuesta: <p id="apt"></p></td>
+                            </tr>
+                            <tr>
+                                <td> <p id="jug1"> </td>
+                                <td> <p id="jug3">... </td>
+                                <td>Tiempo por turno:<p id="tiem"></p> </td>
+                            </tr>
+                            <tr>
+                                <td scope="col"> <p id="jug2">...</p> </td>
+                                <td scope="col"> <p id="Jug4">...</p> </td>
+                                <td scope="col"> <p id="tpart"></p> </td>
+                            </tr>
+                            <tr>
+                                <td scope="col"><button id="joinUn" class="btn-sm btn-success"> Unirse </button></td>
+                                <td scope="col"><button id="joinDos" class="btn-sm btn-success"> Unirse </button></td>
+                                <td scope="col"><p id="ptmax"></p></td>
+                            </tr>
+                        </table>
+              </div>
+            <!-- CARD FOOTER -->
+            <div id="" class="card-footer">
+              <br>
+            </div>
+
+          </div>
+        </div>    
+
+        <!-- USERS SECTION-->
+        <div class="col-md-5">
+        <div class="card">
+          <div class="card-header">
+            <h3>Crear Partida</h3>
+          </div>
+          <form class="card-body" id="creaPartida">
+            <div class="form-group"> 
+                <label for="sel1">Tipo de partida: </label>
+                <select class="form-control" id="sel1">
+                  <option>2 vs 2</option>
+                  <option>1 vs 1</option>
+                </select>
+                <br>
+            
+                <label for="sel2">Tiempo por turno: </label>
+                <select class="form-control" id="sel2">
+                  <option>15''</option>
+                  <option>30''</option>
+                  <option>1'</option>
+                  <option>Sin tiempo</option>
+                </select>
+                <br>
+                <label for="sel3">Ptos para ganar: </label>
+                <select class="form-control" id="sel3">
+                  <option>50</option>
+                  <option>100</option>
+                  <option>150</option>
+                  <option>200</option>
+                </select>
+                <br>
+                <label for="sel4">Apuesta: </label>
+                <input type="text" id="sel4">
+                <input type="submit" class="btn btn-success btn-lg-2" text="Crear">
+
+
+             </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+                
+                        
+            
+
+        
+    <div class="container">
+      <div class="col-md-6 mt-4">
+        <div class="card">
+          <div class="card-header">
+            <h4> let's chat </h4>
+          </div>
+          <div id="chat" class="card-body"></div>
+          <form id="message-form" class="card-footer">
+            <div class="input-group">
+                <input type="text" id="message" class="form-control">
+                <div class='input-group-append'>
+                    <input type="submit" class="btn btn-warning">
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+     <script src="/js/navi.js"></script>
+    <script src="/js/socket.js"></script>
+    <script> clientSocket();</script>
+  </body>
+</html>
+

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profile Page</title>
+    <% include partials/head %>
+  </head>
+  <body>
+  	<canvas id="tablero", height="500", width="500">
+  		lolastico
+  	</canvas>
+
+  </body>
+</html>
